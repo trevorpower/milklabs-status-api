@@ -1,3 +1,3 @@
-require './space-status'
+require './spaceapi'
 
 run Sinatra::Application
