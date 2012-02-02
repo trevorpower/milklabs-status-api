@@ -1,3 +1,3 @@
 source "http://rubygems.org"
-gem "json"
 gem "sinatra"
+gem "s3"
