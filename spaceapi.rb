@@ -2,8 +2,8 @@ require 'sinatra'
 require 'mongo'
 
 before do
+  @mongo = Mongo::Connection.from_uri(ENV['MONGOLAB_URI'])
   uri = URI.parse(ENV['MONGOLAB_URI'])
-  @mongo = Mongo::Connection.from_uri(uri)
   @states = @mongo.db(uri.path.gsub(/^\//, '')).collection('states')
   @state = @states.find_one || { 'status' => 'close' }
 end
