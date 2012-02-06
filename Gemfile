@@ -1,3 +1,4 @@
 source "http://rubygems.org"
 gem "sinatra"
-gem "s3"
+gem "mongo"
+gem "bson_ext"
