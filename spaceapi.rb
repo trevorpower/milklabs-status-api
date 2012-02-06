@@ -9,19 +9,19 @@ before do
 end
 
 get '/' do
-  haml :index, :locals => { :state => @state }
+  haml :index
 end
 
 get '/json' do
-  erb :json, :locals => { :state => @state }, :content_type => 'application/json'
+  erb :json, :content_type => 'application/json'
 end
 
 get '/open' do
-  @state['open'] = 'open'
+  @state['open'] = 'true'
 end
 
 get '/close' do
-  @state['open'] = 'close'
+  @state['open'] = 'false'
 end
 
 after do
