@@ -22,7 +22,7 @@ before do
   uri = URI.parse(ENV['MONGOLAB_URI'])
   @states = @mongo.db(uri.path.gsub(/^\//, '')).collection('states')
   @state = @states.find_one || { 'open' => 'false' }
-  headers :access_control_allow_origin => '*'
+  headers 'Access-Control-Allow-Origin' => '*', 'Cache-Control' => 'no-cache'
 end
 
 after do
