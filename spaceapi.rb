@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'mongo'
 
+set :protection, :except => :json_csrf
+
 get '/' do
   haml :index
 end
@@ -15,10 +17,6 @@ end
 
 get '/close' do
   @state['open'] = 'false'
-end
-
-configure do
-  set :protection, :except => :json_csrf
 end
 
 before do
