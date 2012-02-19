@@ -18,7 +18,7 @@ get '/close' do
 end
 
 configure do
-  set :protection, :except => :frame_options
+  set :protection, :except => :json_csrf
 end
 
 before do
