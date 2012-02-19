@@ -17,7 +17,9 @@ get '/close' do
   @state['open'] = 'false'
 end
 
-set :protection, :except => :frame_options
+configure do
+  set :protection, :except => :frame_options
+end
 
 before do
   @mongo = Mongo::Connection.from_uri(ENV['MONGOLAB_URI'])
